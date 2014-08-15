@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Swt_wwj
+Bundle-SymbolicName: cn.v5cn.swt_wwj; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: cn.v5cn.swt_wwj.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ClassPath: libs/gdal.jar,
+ libs/gluegen-rt.jar,
+ libs/jogl.jar,
+ libs/worldwind.jar,
+ .

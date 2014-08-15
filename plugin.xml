@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="cn.v5cn.swt_wwj.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="cn.v5cn.swt_wwj.Perspective"
+            id="cn.v5cn.swt_wwj.perspective">
+      </perspective>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="cn.v5cn.swt_wwj.application"
+            name="Hello RCP">
+         <property
+               name="windowImages"
+               value="icons/alt_window_16.gif,icons/alt_window_32.gif">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            class="cn.v5cn.swt_wwj.views.LayerListView"
+            icon="icons/alt_window_16.gif"
+            id="cn.v5cn.swt_wwj.views.layerlistview"
+            name="图层列表"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="cn.v5cn.swt_wwj.views.WWJView"
+            icon="icons/alt_window_16.gif"
+            id="cn.v5cn.swt_wwj.views.wwjview"
+            name="地图视图"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="cn.v5cn.swt_wwj.actionSet"
+            label="editor"
+            visible="true">
+         <menu
+               id="cn.v5cn.swt_wwj.editorMenu"
+               label="编辑">
+            <separator
+                  name="cn.v5cn.swt_wwj.editorGroup">
+            </separator>
+         </menu>
+         <action
+               class="cn.v5cn.swt_wwj.actions.SurfaceImageAction"
+               icon="icons/alt_window_16.gif"
+               id="cn.v5cn.swt_wwj.actions.surfaceImageAction"
+               label="添加图片图层"
+               menubarPath="cn.v5cn.swt_wwj.editorMenu/cn.v5cn.swt_wwj.editorGroup"
+               style="push"
+               toolbarPath="cn.v5cn.swt_wwj.editorGroup">
+         </action>
+      </actionSet>
+   </extension>
+
+</plugin>
